@@ -42,42 +42,64 @@ var yourCharacter = false;
 var defender = false;
 
 
-	//Select Your Character.  Move others to enemies to attack. Empty original div.
+	//Select Your Character.  Move others to enemies to attack. Empty original div.  Appended entire div to maintain classes, format, etc and clarifying the end of the append.
 	$(".containImages").on("click", "img", function() {   
 		alert("you clicked me");
 		//Select Yoda as your character.
-        if ( $(this).hasClass("yoda")) {   
-           $("#yourChar p").append('<img src="assets/images/yoda.jpg"/>');
-           $("#enemies p").append('<img src="assets/images/darth_talon.jpg"/>' + '<img src="assets/images/darth_maul.jpg"/>' + '<img src="assets/images/darth_vader.jpg"/>')
-           $(".containImages").empty();
+        if ( $(this).hasClass("yoda")) {   	
+        	alert(yourCharacter);
+        	alert("You clicked Yoda");
+        	$("#yourChar").append($('<div id="yoda" class="col-xs-3 col-md-2 yoda"><div class="thumbnail"><div class="caption"><h5>Master Yoda</h5></div><img src="assets/images/yoda.jpg" alt="Yoda"><div class="caption"><p>Health 100</p></div></div></div>'));
+        	$("#enemies").append($('<div class="col-xs-3 col-md-2 darthTalon"><div class="thumbnail"><div class="caption"><h5>Darth Talon</h5></div><img src="assets/images/darth_talon.jpg" alt="Darth Talon"><div class="caption"><p>Health 140</p></div></div></div>'));
+     		$("#enemies").append($('<div class="col-xs-3 col-md-2 darthMaul"><div class="thumbnail"><div class="caption"><h5>Darth Maul</h5></div><img src="assets/images/darth_maul.jpg" alt="Darth Maul"><div class="caption"><p>Health 150</p></div></div></div>'));
+     		$("#enemies").append($('<div class="col-xs-3 col-md-2 darthVader"><div class="thumbnail"><div class="caption"><h5>Darth Vader</h5></div><img src="assets/images/darth_vader.jpg" alt="Darth Vader"><div class="caption"><p>Health 120</p></div></div></div>'));
+	   		$("#char").empty();
+        	yourCharacter=true;
         }
 
 		//Select Darth Talon as your character.  Move others to enemies to attack. Empty original div.		
-        if ( $(this).hasClass("darthTalon")) {   
-            $("#yourChar p").append('<img src="assets/images/darth_talon.jpg"/>');
-            $("#enemies p").append('<img src="assets/images/yoda.jpg"/>' + '<img src="assets/images/darth_maul.jpg"/>' + '<img src="assets/images/darth_vader.jpg"/>')
-            $(".containImages").empty();
+        if ( $(this).hasClass("darthTalon")) { 
+           	alert(yourCharacter);		
+           	alert("You clicked Lady");   	
+         	$("#enemies").append($('<div id="yoda" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Master Yoda</h5></div><img src="assets/images/yoda.jpg" alt="Yoda"><div class="caption"><p>Health 100</p></div></div></div>'));
+           	$("#yourChar").append($('<div id="darthTalon" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Talon</h5></div><img src="assets/images/darth_talon.jpg" alt="Darth Talon"><div class="caption"><p>Health 140</p></div></div></div>'));
+           	$("#enemies").append($('<div id="darthMaul" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Maul</h5></div><img src="assets/images/darth_maul.jpg" alt="Darth Maul"><div class="caption"><p>Health 150</p></div></div></div>'));
+	       	$("#enemies").append($('<div id="darthVader" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Vader</h5></div><img src="assets/images/darth_vader.jpg" alt="Darth Vader"><div class="caption"><p>Health 120</p></div></div></div>'));
+		   	$("#char").empty();
+           	yourCharacter=true;
         }
 
         //Select Darth Maul as your character.  Move others to enemies to attack. Empty original div.		
-        if ( $(this).hasClass("darthMaul")) {   
-            $("#yourChar p").append('<img src="assets/images/darth_maul.jpg"/>');
-            $("#enemies p").append('<img src="assets/images/yoda.jpg"/>' + '<img src="assets/images/darth_talon.jpg"/>' + '<img src="assets/images/darth_vader.jpg"/>')
-            $(".containImages").empty();
+        if ( $(this).hasClass("darthMaul") && !yourCharacter) {   
+ 		   	$("#enemies").append($('<div id="yoda" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Master Yoda</h5></div><img src="assets/images/yoda.jpg" alt="Yoda"><div class="caption"><p>Health 100</p></div></div></div>'));
+          	$("#enemies").append($('<div id="darthTalon" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Talon</h5></div><img src="assets/images/darth_talon.jpg" alt="Darth Talon"><div class="caption"><p>Health 140</p></div></div></div>'));
+         	$("#yourChar").append($('<div id="darthMaul" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Maul</h5></div><img src="assets/images/darth_maul.jpg" alt="Darth Maul"><div class="caption"><p>Health 150</p></div></div></div>'));
+	       	$("#enemies").append($('<div id="darthVader" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Vader</h5></div><img src="assets/images/darth_vader.jpg" alt="Darth Vader"><div class="caption"><p>Health 120</p></div></div></div>'));
+		   	$("#char").empty();
+	       	yourCharacter=true;
         }
 
         //Select Darth Vader as your character.  Move others to enemies to attack. Empty original div.		
-        if ( $(this).hasClass("darthVader")) {   
-            $("#yourChar p").append('<img src="assets/images/darth_vader.jpg"/>');
-            $("#enemies p").append('<img src="assets/images/yoda.jpg"/>' + '<img src="assets/images/darth_talon.jpg"/>' + '<img src="assets/images/darth_maul.jpg"/>')
-            $(".containImages").empty();
-        }
+       	if ( $(this).hasClass("darthVader") && !yourCharacter) {   
+ 		   	$("#enemies").append($('<div id="yoda" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Master Yoda</h5></div><img src="assets/images/yoda.jpg" alt="Yoda"><div class="caption"><p>Health 100</p></div></div></div>'));
+           	$("#enemies").append($('<div id="darthTalon" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Talon</h5></div><img src="assets/images/darth_talon.jpg" alt="Darth Talon"><div class="caption"><p>Health 140</p></div></div></div>'));
+           	$("#enemies").append($('<div id="darthMaul" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Maul</h5></div><img src="assets/images/darth_maul.jpg" alt="Darth Maul"><div class="caption"><p>Health 150</p></div></div></div>'));
+	      	$("#yourChar").append($('<div id="darthVader" class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Vader</h5></div><img src="assets/images/darth_vader.jpg" alt="Darth Vader"><div class="caption"><p>Health 120</p></div></div></div>'));
+		   	$("#char").empty(); 
+       }
 
     });//end of your character pick
 
+	//Select Defender
+//	$("#enemies").on("click", "img", function() { 
+	//	if (yourCharacter===true)  {
+//		   if ( $(this).hasClass("yoda")) {   
+//           	 	$("#defender p").append('<img src="assets/images/yoda.jpg" class="yoda" alt="Yoda"/>');
+//             	$("#enemies p").remove('<img src="assets/images/yoda.jpg" class="yoda" alt="Yoda"/>');
+ //          	 	defender=true;
+//		   }
+	//	}
 
-
-
-
+//	});//end of defender pick
 
 });//document ready

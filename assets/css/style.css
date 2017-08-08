@@ -8,13 +8,46 @@ body {
 
 }
 
+.thumbnail {
+	border: .1em #000000 solid;
+	background-color: #678667;
+	border-radius: 2em;
+}
+
+.thumbnail .caption {
+	padding: 4px;
+}
+
+.thumbnail h5 {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: .9em;
+	font-family: 'PT Sans', sans-serif;
+	letter-spacing: .4em;
+	margin: .4em .5em;	
+	text-align: center;
+}
+
+.thumbnail p {
+	color: #ffffff;
+	font-size: .7em;
+	font-family: 'PT Sans', sans-serif;
+	letter-spacing: .4em;
+	margin: 0;	
+	text-align: center;
+}
+
 img {
-	width: 15%;
-	height: 15%;
 	border: .3em #000000 solid;
 	border-radius: 2em;
-	margin: .5em;
+}
 
+#yourChar .thumbnail img {
+	border-color: #2bff47;
+}
+
+#enemies .thumbnail img, #defender .thumbnail img{
+	border-color: #ff0022;
 }
 
 h3 {
@@ -23,10 +56,12 @@ h3 {
 	font-size: 1.3em;
 	font-family: 'PT Sans', sans-serif;
 	letter-spacing: .4em;
-	margin: .4em .5em;	
-	
+	margin: .4em .5em;		
 }
 
+#title {
+	margin-bottom: 1em;
+}
 
 #title h2 {
 	text-align: center;
@@ -51,4 +86,3 @@ h3 {
 #button {
 	margin: .4em;
 }
-

@@ -18,21 +18,69 @@
 </head>
 <body>
   <div id="container">
+	
 	<div id="title">
-	<p>
-	<h2>Star Wars RPG</h2>
-	<h3>Only One Can Survive!</h3>
-	</p>
+		<p>
+			<h2>Star Wars RPG</h2>
+			<h3>Only One Can Survive!</h3>
+		</p>
 	</div>
-	<div id="char" class="containImages">
-		<img src="assets/images/yoda.jpg" class="yoda" alt="Yoda">
-		<img src="assets/images/darth_talon.jpg" class="darthTalon" alt="Darth Talon">
-		<img src="assets/images/darth_maul.jpg" class="darthMaul" alt="Darth Maul">
-		<img src="assets/images/darth_vader.jpg" class="darthVader" alt="Darth Vader">	
-	</div>
+
+	<div id="char" class="containImages row">
+		<!--If update thumbnail classes or type, need to update game.js file for character, enemies, and defender (approx lines-46-103) !!-->
+		<div class="col-xs-3 col-md-2">
+			<div class="thumbnail">
+				<div class="caption">
+        			<h5>Master Yoda</h5>
+        		</div>	
+      			<img src="assets/images/yoda.jpg" class="yoda" alt="Yoda">
+      			<div class="caption">
+        			<p>Health 100</p>
+        		</div>	
+        	</div>
+    	</div>
+
+  		<div class="col-xs-3 col-md-2">
+			<div class="thumbnail">
+				<div class="caption">
+        			<h5>Darth Talon</h5>
+        		</div>	
+      			<img src="assets/images/darth_talon.jpg" class="darthTalon" alt="Darth Talon">
+      			<div class="caption">
+        			<p>Health 140</p>
+        		</div>	
+        	</div>		
+    	</div>
+
+		<div class="col-xs-3 col-md-2">
+			<div class="thumbnail">
+				<div class="caption">
+        			<h5>Darth Maul</h5>
+        		</div>	
+      			<img src="assets/images/darth_maul.jpg" class="darthMaul" alt="Darth Maul">
+      			<div class="caption">
+        			<p>Health 150</p>
+        		</div>	
+        	</div>		
+    	</div>
+
+		<div class="col-xs-3 col-md-2">
+			<div class="thumbnail">
+				<div class="caption">
+        			<h5>Darth Vader</h5>
+        		</div>	
+      			<img src="assets/images/darth_vader.jpg" class="darthVader" alt="Darth Vader">	
+      			<div class="caption">
+        			<p>Health 120</p>
+        		</div>	
+        	</div>		
+    	</div>
+
+	</div><!--end of char -->
+
 	<div id="yourChar">
 		<h3>Your Character</h3>
-		<p></p>
+		
 	</div>
 	<div id="enemies">
 		<h3>Enemies to Attack</h3>
