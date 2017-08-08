@@ -12,6 +12,7 @@ body {
 	border: .1em #000000 solid;
 	background-color: #678667;
 	border-radius: 2em;
+	max-width: 80%;
 }
 
 .thumbnail .caption {
@@ -21,7 +22,7 @@ body {
 .thumbnail h5 {
 	color: #ffffff;
 	font-weight: bold;
-	font-size: .9em;
+	font-size: .7em;
 	font-family: 'PT Sans', sans-serif;
 	letter-spacing: .4em;
 	margin: .4em .5em;	
@@ -30,7 +31,7 @@ body {
 
 .thumbnail p {
 	color: #ffffff;
-	font-size: .7em;
+	font-size: .6em;
 	font-family: 'PT Sans', sans-serif;
 	letter-spacing: .4em;
 	margin: 0;	
@@ -53,10 +54,11 @@ img {
 h3 {
 	color: #ffffff;
 	font-weight: bold;
-	font-size: 1.3em;
+	font-size: 1em;
 	font-family: 'PT Sans', sans-serif;
 	letter-spacing: .4em;
-	margin: .4em .5em;		
+	margin: .4em .5em;	
+	padding-left:  .5em;	
 }
 
 #title {
@@ -84,5 +86,7 @@ h3 {
 }
 
 #button {
-	margin: .4em;
+	margin: .4em 0 .4em 1em;
+
+
 }

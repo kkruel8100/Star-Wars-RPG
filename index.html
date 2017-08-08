@@ -3,13 +3,14 @@
 <head>
 	<title>Star Wars RPG</title>
 
-	 <!-- Added link to the jQuery library -->
-  	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+	 
 	<!-- Font styles -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
 	<!-- Added a link to Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Added link to the jQuery library -->
+  	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 	<!-- Reset CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<!-- Custom CSS -->
@@ -20,10 +21,8 @@
   <div id="container">
 	
 	<div id="title">
-		<p>
 			<h2>Star Wars RPG</h2>
 			<h3>Only One Can Survive!</h3>
-		</p>
 	</div>
 
 	<div id="char" class="containImages row">
@@ -78,30 +77,47 @@
 
 	</div><!--end of char -->
 
-	<div id="yourChar">
-		<h3>Your Character</h3>
+	<div class="row">
+
+		<div id="yourChar">
+			<h3>Your Character</h3>		
+		</div>
+	</div>	
+
+	<div class="row">
+		<div id="enemies">
+			<h3>Enemies to Attack</h3>
+			<p></p>
+		</div>
+	</div>
 		
-	</div>
-	<div id="enemies">
-		<h3>Enemies to Attack</h3>
-		<p></p>
-	</div>
-	<div id="fightSec">
-		<h3>Fight Section</h3>
-		<p></p>
-	</div>
-	<div id="attack">
-		<button id="button" class="btn btn-warning btn-lg"><h1>Attack</h1></button>
-	</div>
-	<div id="defender">
-		<h3>Defender</h3>
-		<p></p>
-	</div>
-	<div id="restart">
-		<button id="button" class="btn btn-danger btn-lg"><h1>Restart</h1></button>
+	<div class="row">	
+		<div id="fightSec">
+			<h3>Fight Section</h3>
+			<p></p>
+		</div>
+	</div>	
+
+	<div class="row">	
+		<div id="attack">
+			<button id="button" class="btn btn-warning btn-lg"><h1>Attack</h1></button>
+		</div>
 	</div>
 
-  </div>
+	<div class="row">	
+		<div id="defender">
+			<h3>Defender</h3>
+			<p></p>
+		</div>
+	</div>
+		
+	<div class="row">	
+		<div id="restart">
+			<button id="button" class="btn btn-danger btn-lg"><h1>Restart</h1></button>
+		</div>
+	</div>
+
+  </div><!--end of container div -->
 
 	<!-- Custom Javascript -->
 	<script src="assets/javascript/game.js"></script>
