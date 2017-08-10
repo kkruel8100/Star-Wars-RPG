@@ -30,7 +30,7 @@ body {
 	text-align: center;
 }
 
-.thumbnail p {
+.thumbnail p{
 	color: #ffffff;
 	font-size: .6em;
 	font-family: 'PT Sans', sans-serif;
@@ -58,7 +58,7 @@ h3 {
 	font-size: 1em;
 	font-family: 'PT Sans', sans-serif;
 	letter-spacing: .4em;
-	margin: .4em .5em;	
+	margin: .35em .5em;	
 	padding-left:  .5em;	
 }
 
@@ -87,7 +87,15 @@ h3 {
 }
 
 #button {
-	margin: .4em 0 .4em 1em;
+	margin: .35em 0 .35em 1em;
+}
 
-
+.stat1, .stat2 {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: .8em;
+	font-family: 'PT Sans', sans-serif;
+	letter-spacing: .4em;
+	margin-bottom: .4em;	
+	
 }
