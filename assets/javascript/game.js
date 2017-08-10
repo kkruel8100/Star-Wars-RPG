@@ -51,6 +51,7 @@ var name; //Captures name of defender
 		
 		//Select Yoda as your character.
         if ( $(this).hasClass("yoda")) {
+          //The div format below keeps the layout and class structure of original div
           $("#yourChar p").append($('<div class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption caption1"><h5>Master Yoda</h5></div><img src="assets/images/yoda.jpg" class="yoda" alt="Yoda"><div class="caption caption2"><p>Health 140</p></div></div></div>'));
           $(".eneDT").append($('<div class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption caption1"><h5>Darth Talon</h5></div><img src="assets/images/darth_talon.jpg" class="darthTalon" alt="Darth Talon"><div class="caption caption2"><p>Health 120</p></div></div></div>'));
           $(".eneDM").append($('<div class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption caption1"><h5>Darth Maul</h5></div><img src="assets/images/darth_maul.jpg" class="darthMaul" alt="Darth Maul"><div class="caption caption2"><p>Health 135</p></div></div></div>'));
@@ -61,9 +62,6 @@ var name; //Captures name of defender
           ychp=yoda.health;
           attackPoints=yoda.attack;
           attackCum=attackPoints;
-          // alert(ychp);
-          // alert(attackPoints);
-          // alert(attackCum);
         }
 
 		//Select Darth Talon as your character.  Move others to enemies to attack. Empty original div.		
@@ -78,9 +76,6 @@ var name; //Captures name of defender
           ychp=darthTalon.health;
           attackPoints=darthTalon.attack;
           attackCum=attackPoints;
-          // alert(ychp);
-          // alert(attackPoints);
-          // alert(attackCum);
         }
 
         //Select Darth Maul as your character.  Move others to enemies to attack. Empty original div.		
@@ -95,9 +90,6 @@ var name; //Captures name of defender
           ychp=darthMaul.health;
           attackPoints=darthMaul.attack;
           attackCum=attackPoints;
-          // alert(ychp);
-          // alert(attackPoints);
-          // alert(attackCum);
         }
 
         //Select Darth Vader as your character.  Move others to enemies to attack. Empty original div.		
@@ -112,8 +104,6 @@ var name; //Captures name of defender
           ychp=darthVader.health;
           attackPoints=darthVader.attack;
           attackCum=attackPoints;
-          // alert(ychp);
-          // alert(attackPoints); 
        }
 
     });//end of your character pick
@@ -127,8 +117,6 @@ var name; //Captures name of defender
       defender=true;
       defhp=yoda.health;
       defenderAttack=yoda.defender;
-      // alert(defhp);
-      // alert(defenderAttack);
       name=yoda.name;
 		}
 
@@ -138,8 +126,6 @@ var name; //Captures name of defender
       defender=true;
       defhp=darthTalon.health;
       defenderAttack=darthTalon.defender;
-      // alert(defhp);
-      // alert(defenderAttack);
       name=darthTalon.name;
     }
 
@@ -149,8 +135,6 @@ var name; //Captures name of defender
       defender=true;
       defhp=darthMaul.health;
       defenderAttack=darthMaul.defender;
-      // alert(defhp);
-      // alert(defenderAttack);
       name=darthMaul.name;
     }
 
@@ -160,30 +144,18 @@ var name; //Captures name of defender
       defender=true;
       defhp=darthVader.health;
       defenderAttack=darthVader.defender;
-      // alert(defhp);
-      // alert(defenderAttack);
       name=darthVader.name;
     }
 	});//end of defender pick
 
   //Attack
   $("#attack").on("click", function () {  
-    // console.log("attack clicked");
-    // console.log(ychp);
-    // console.log(attackPoints);
-    // console.log(defhp);
-    // console.log(defenderAttack);
-    // console.log(attackCum);
  
     //If Character and defender chosen and both have health greater than 0
     if( ychp>0 && defhp>0 && defender===true && yourCharacter===true) {
      defhp-=attackCum;
-     // console.log(attackCum);
-     // console.log(defhp);
      $(".stat1").html("You attacked " + name + " for " +  attackCum + " damage.");
      attackCum+=attackPoints;
-     // console.log(attackPoints);
-     // console.log(attackCum);
      $("#defender .caption2 p").html("Health " + defhp);
 
       //If Defender health is greater than 0, defender attacks
