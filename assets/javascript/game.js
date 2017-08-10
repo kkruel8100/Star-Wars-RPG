@@ -3,44 +3,58 @@
 // "document.ready" makes sure that our JavaScript doesn't get run until the HTML document is finished loading.
 $(document).ready(function() {
 
-//list of character objects
+//characters as object arrays
+
 var yoda = {
+  "name": "Yoda",
   "health": 140,
-  "attack": 4,
-  "defender": 25
+    "attack": 4,
+    "defender": 25,
+    "faction": "Jedi Order"
 }
 
 var darthTalon = {
-	"health": 120,
-  "attack": 8,
-  "defender": 10
+  "name": "Darth Talon",
+  "health": 120,
+    "attack": 8,
+    "defender": 10,
+    "faction": "Lady of the Sith Order"
 }
-
 var darthMaul = {
+  "name": "Darth Maul",
   "health": 150,
-  "attack": 7,
-  "defender": 20
+    "attack": 7,
+    "defender": 20,
+    "faction": "Lord of the Sith Order"
 }
-
 var darthVader = {
-	"health": 100,
-  "attack": 11,
-  "defender": 5
+  "name": "Darth Vader",
+  "health": 100,
+    "attack": 11,
+    "defender": 5,
+    "faction": "Lord of the Sith Order"
 }
 
-//list variables
-var attackCum;
-var characterHealth;
-var defenderHealth;
-var ych;
-var def;
-var hp;
-var attackPoints;
-var defenderAttack;
+
+
+ 
+
+var player; //User chosen character 
+var playerHealth; //Holds player health
+var attackPoints; //Holds cumulative player attack points
+
+var defender; //User chosen defender
+var defenderHealth; //Holds defender health
+var defenderPoints; //Holds defender attack points
+
+var playerChar = false; //Toggle for chosen player character
+var defenderChar = false; //Toggle for chosen defender
 
 var yourCharacter = false;
 var defender = false;
 
+var ychp = 0;
+var defhp = 0;
 
 	//Select Your Character.  Move others to enemies to attack. Empty original div.  Appended entire div to maintain classes, format, etc and clarifying the end of the append.
 	$(".containImages").on("click", "img", function() {   
@@ -54,8 +68,10 @@ var defender = false;
           $("#char").hide();
           $("#title").hide();
           yourCharacter=true;
-          ych="yoda";
-          console.log(ych);
+          ychp=yoda.health;
+          attackPoints=yoda.attack;
+          alert(ychp);
+          alert(attackPoints);
         }
 
 		//Select Darth Talon as your character.  Move others to enemies to attack. Empty original div.		
@@ -67,8 +83,10 @@ var defender = false;
 		   	  $("#char").hide();
           $("#title").hide();
           yourCharacter=true;
-          ych="darthTalon";
-          console.log(ych);
+          ychp=darthTalon.health;
+          attackPoints=darthTalon.attack;
+          alert(ychp);
+          alert(attackPoints);
         }
 
         //Select Darth Maul as your character.  Move others to enemies to attack. Empty original div.		
@@ -80,8 +98,10 @@ var defender = false;
           $("#char").hide();
           $("#title").hide();
 	       	yourCharacter=true;
-          ych="darthMaul";
-          console.log(ych);
+          ychp=darthMaul.health;
+          attackPoints=darthMaul.attack;
+          alert(ychp);
+          alert(attackPoints);
         }
 
         //Select Darth Vader as your character.  Move others to enemies to attack. Empty original div.		
@@ -93,8 +113,10 @@ var defender = false;
           $("#char").hide();
           $("#title").hide();
           yourCharacter=true;
-          ych="darthVader";
-          console.log(ych); 
+          ychp=darthVader.health;
+          attackPoints=darthVader.attack;
+          alert(ychp);
+          alert(attackPoints); 
        }
 
     });//end of your character pick
@@ -106,91 +128,73 @@ var defender = false;
       $("#defender p").append($('<div class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Master Yoda</h5></div><img src="assets/images/yoda.jpg" class="yoda" alt="Yoda"><div class="caption"><p>Health 100</p></div></div></div>'));
       $(".eneMY").empty();
       defender=true;
-      def="yoda";
-		  console.log(def);
+      defhp=yoda.health;
+      vdefenderAttack=yoda.defender;
+      alert(defhp);
+      alert(defenderAttack);
 		}
 
     if ( $(this).hasClass("darthTalon") && yourCharacter && !defender) {   
       $("#defender p").append($('<div class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Talon</h5></div><img src="assets/images/darth_talon.jpg" class="darthTalon" alt="Darth Talon"><div class="caption"><p>Health 140</p></div></div></div>'));      
       $(".eneDT").empty();
       defender=true;
-      def="darthTalon";
-      console.log(def);
+      defhp=darthTalon.health;
+      defenderAttack=darthTalon.defender;
+      alert(defhp);
+      alert(defenderAttack);
     }
 
     if ( $(this).hasClass("darthMaul") && yourCharacter && !defender) {   
       $("#defender p").append($('<div class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Maul</h5></div><img src="assets/images/darth_maul.jpg" class="darthMaul" alt="Darth Maul"><div class="caption"><p>Health 150</p></div></div></div>'));     
       $(".eneDM").empty();
       defender=true;
-      def="darthMaul";
-      console.log(def);
+      defhp=darthMaul.health;
+      defenderAttack=darthMaul.defender;
+      alert(defhp);
+      alert(defenderAttack);
     }
 
     if ( $(this).hasClass("darthVader") && yourCharacter && !defender) {   
       $("#defender p").append($('<div class="col-xs-3 col-md-2"><div class="thumbnail"><div class="caption"><h5>Darth Vader</h5></div><img src="assets/images/darth_vader.jpg" class="darthVader" alt="Darth Vader"><div class="caption"><p>Health 120</p></div></div></div>'));      
       $(".eneDV").empty();
       defender=true;
-      def="darthVader";
-      console.log(def);
+      defhp=darthVader.health;
+      defenderAttack=darthVader.defender;
+      alert(defhp);
+      alert(defenderAttack);
     }
 	});//end of defender pick
 
   $("#defender p").addClass("defender");
   $("#yourChar p").addClass("attacker");
+/*
+  function charStats (l) {
+    for (i=0; i<characters.length; i++) {
+        if(yourCharacter===true);
+        console.log(characters[i]);
+        return l;
+    }
+  };
+
+ */ 
 
   //Attack
   $("#attack").on("click", function () {  
-    //Loading defender stats
-    console.log("Let's battle");
-    if(def==="yoda") {
-      hp=yoda.health;
-      defenderAttack=yoda.defender;
-      alert(hp);
-      alert(defenderAttack);
-    }
-    if(def==="darthTalon") {
-      hp=darthTalon.health;
-      defenderAttack=darthTalon.defender;
-      alert(hp);
-      alert(defenderAttack);
-    }
-    if(def==="darthMaul") {
-      hp=darthMaul.health;
-      defenderAttack=darthMaul.defender;
-      alert(hp);
-      alert(defenderAttack);
-    }
-    if(def==="darthVader") {
-      hp=darthVader.health;
-      defenderAttack=darthVader.defender;
-      alert(hp);
-      alert(defenderAttack);
-    }
-    //loading your character stats
-    if(ych==="yoda") {
-      hp=yoda.health;
-      attackPoints=yoda.attack;
-      alert(hp);
-      alert(attackPoints);
-    }
-    if(ych==="darthTalon") {
-      hp=darthTalon.health;
-      attackPoints=darthTalon.attack;
-      alert(hp);
-      alert(attackPoints);
-    }
-    if(ych==="darthMaul") {
-      hp=darthMaul.health;
-      attackPoints=darthMaul.attack;
-      alert(hp);
-      alert(attackPoints);
-    }
-    if(ych==="darthVader") {
-      hp=darthVader.health;
-      attackPoints=darthVader.attack;
-      alert(hp);
-      alert(attackPoints);
-    }
+
+    console.log("attack clicked");
+  
+  
+    console.log(ychp);
+    console.log(attackPoints);
+    console.log(defhp);
+    console.log(defenderAttack);
+    // if( ychp>0 &&  defhp>0) {
+     
+    // }
+
+
+
+
   });//end of attack
 
 
@@ -206,14 +210,16 @@ var defender = false;
     $(".eneDM").empty();
     $(".eneDV").empty(); 
     $("#defender p").empty();
-    var defender=false;
-    var yourCharacter=false;
-    var hp;
-    var attackPoints;
-    var defenderAttack;
+    defender=false;
+    yourCharacter=false;
+    defhp=0;
+    ychhp=0;
+    attackPoints=0;
+    defenderAttack=0;
     console.log(defender);
     console.log(yourCharacter);
-    console.log(hp);
+    console.log(defhp);
+    console.log(ychhp);
     console.log(attackPoints);
     console.log(defenderAttack);
   });  
